@@ -2,7 +2,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-directory = os.getcwd()+'/reconstructions/mnist/csdip/loss_plot/save2/'
+directory = os.getcwd()+'/reconstructions/mnist/csdip/loss_plot/'
 mn_ratios = np.load(directory + 'mn_ratios.npy')
 avg_losses = np.load(directory + 'avg_losses.npy')
 measurement_list = mn_ratios*(28*28)
