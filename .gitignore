@@ -1,2 +1,17 @@
+##############
+## Python Files
+#########
 *.pyc
 *.py.swp
+.idea/
+
+
+##########################
+## Files / Reconstructions
+##############
+reconstructions/
+
+#############
+## Random
+#######
+*.json

@@ -17,13 +17,14 @@ def parse_args(config_file='configs.json'):
     WD = CONFIG["weight_decay"]
     NUM_ITER = CONFIG["number_iterations"]
     NUM_RESTARTS = CONFIG["number_restarts"]
+    MEASURE_TYPE = CONFIG["measure_type"]
  
     parser = argparse.ArgumentParser()
     parser.add_argument('--DEMO', type=str, default=DEMO, \
             help='demo, boolean. Set True to run method over subset of 5 images \
              (default). Set False to run over entire dataset.')
     parser.add_argument('--DATASET', type=str, default=DATASET,\
-            help='dataset, DEFAULT=mnist. SUPPORTED=[mnist, xray]')
+            help='dataset, DEFAULT=mnist. SUPPORTED=[mnist, xray, celeba]')
     parser.add_argument('--BASIS', nargs='+', type=str, default=BASIS,\
         help='basis, DEFAULT=csdip. SUPPORTED=[csdip, dct, wavelet]')
     parser.add_argument('--LR', type=float, default=LR,\
@@ -38,6 +39,8 @@ def parse_args(config_file='configs.json'):
     		help='number of restarts, DEFAULT=' + str(NUM_RESTARTS))
     parser.add_argument('--NUM_MEASUREMENTS', nargs='+', type=int, default = None, \
             help='number of measurements, DEFAULT dependent on dataset')
+    parser.add_argument('--MEASURE_TYPE', type=str, default=MEASURE_TYPE,\
+            help="compressed sensing measurement type, DEFAULT=lin_comp_sense. SUPPORTED=[lin_comp_sense, phase_retrieval]")
 
     args = parser.parse_args()
 

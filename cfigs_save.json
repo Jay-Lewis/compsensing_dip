@@ -18,7 +18,7 @@
 	"mnist": {
 		"img_size": 28,
 		"num_channels": 1,
-		"num_measurements": 100,
+		"num_measurements": [100,200],
 		"z_dim": 128
 	}
 }
